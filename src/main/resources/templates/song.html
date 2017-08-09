@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+
+    <span th:if="${#fields.hasErrors('name')}" th:error="*{name}">This field can't be empty</span>
+    <p>Enter the Name: <input type="text" th:field="*{name}" /></p>
+    <span th:if="${#fields.hasErrors('artist')}" th:error="*{artist}">This field mustn't be empty</span>
+    <p>Enter the Artist: <input type="text" th:field="*{artist}" /></p>
+    <span th:if="${#fields.hasErrors('album')}" th:error="*{album}">You must fill out this field</span>
+    <p>Enter the album: <input type="text" th:field="*{album}" /></p>
+
+    <p>Enter the rating: <input type="text" th:field="*{rating}" /></p>
+
+    <p>Enter the year: <input type="text" th:field="*{year}" /></p>
+
+    <p><input type="submit" value="Add the Song" /> <input type="reset" value="Reset" /></p>
+
+
+</form>
+
+</body>
+</html>
